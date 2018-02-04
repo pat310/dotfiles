@@ -273,6 +273,7 @@ autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
                 " let Vundle manage Vundle, required
                 Plugin 'VundleVim/Vundle.vim'
+                Plugin 'vim-scripts/repmo.vim'
         Plugin 'mileszs/ack.vim'                                 " File searching
                 Plugin 'nathanaelkane/vim-indent-guides'
         Plugin 'scrooloose/nerdtree'
