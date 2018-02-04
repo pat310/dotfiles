@@ -338,6 +338,9 @@ autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
         Plugin 'pangloss/vim-javascript'                         " No longer maintained
         Plugin 'flowtype/vim-flow'                               " Flow Checking
 
+        " Octave
+        Plugin 'vim-scripts/octave.vim--'
+
         "SML
         Plugin 'chilicuil/vim-sml-coursera'                     "sml repl and indent files
 
