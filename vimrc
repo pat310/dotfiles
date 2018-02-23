@@ -67,6 +67,7 @@
   set lazyredraw                          " enable better scroll with syntastic
   set cursorline                          " line highlighing
   set nowrap                              " don't wrap lines
+  set tw=0                                " do not automatically wrap lines
   set backspace=indent,eol,start          " backspace through everything
 
   " indenting
