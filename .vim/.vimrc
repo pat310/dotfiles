@@ -57,15 +57,24 @@ call plug#begin()
 "bottom status bar
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 "ctrlp fuzzy search
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+
 "nerdtree file directory
 Plug 'https://github.com/scrooloose/nerdtree'
+
 "matching bracket completion
 Plug 'https://github.com/jiangmiao/auto-pairs'
+
 "haskell highlighting
 Plug 'https://github.com/neovimhaskell/haskell-vim'
+
 "tab completion
 Plug 'https://github.com/ervandew/supertab'
+
+"jsx syntax highlighting
+Plug 'https://github.com/mxw/vim-jsx'
+
 " Initialize plugin system
 call plug#end()
