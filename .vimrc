@@ -38,6 +38,8 @@ let g:airline_theme='tomorrow'
 
 "allow fuzzy search through files
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
+"ctrlp ignore node_modules
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 
 "opening nerd tree
 nmap <leader>ne :NERDTree<cr>
