@@ -53,6 +53,10 @@ let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
 let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
 let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
 
+"force Ack to use Ack! which stops it from opening first result
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+
 " Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin()
@@ -77,6 +81,9 @@ Plug 'https://github.com/ervandew/supertab'
 
 "jsx syntax highlighting
 Plug 'https://github.com/mxw/vim-jsx'
+
+"Fuzzy search through files
+Plug 'https://github.com/mileszs/ack.vim'
 
 " Initialize plugin system
 call plug#end()
