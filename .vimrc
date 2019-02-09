@@ -85,5 +85,11 @@ Plug 'https://github.com/mxw/vim-jsx'
 "Fuzzy search through files
 Plug 'https://github.com/mileszs/ack.vim'
 
+"Purescript syntax highlighting
+Plug 'https://github.com/purescript-contrib/purescript-vim'
+
+"ReasonML syntax highlighting
+Plug 'reasonml-editor/vim-reason-plus'
+
 " Initialize plugin system
 call plug#end()

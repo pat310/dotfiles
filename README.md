@@ -11,3 +11,4 @@ git clone to the home directory as `.vim`:
 ## Additional tips
 * Set caps lock to escape [natively](https://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x) or with [karabiner](https://pqrs.org/osx/karabiner/)
 * [Tomorrow color theme](https://github.com/chriskempson/tomorrow-theme)
+* Download [Firacode](https://github.com/tonsky/FiraCode) for ligatures. Select all TTF fonts and open and install with font book. Set font in terminal preferences (not done in vimrc).
