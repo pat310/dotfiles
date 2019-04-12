@@ -91,5 +91,8 @@ Plug 'https://github.com/purescript-contrib/purescript-vim'
 "ReasonML syntax highlighting
 Plug 'reasonml-editor/vim-reason-plus'
 
+"Typescript syntax highlighting
+Plug 'https://github.com/leafgarland/typescript-vim'
+
 " Initialize plugin system
 call plug#end()
