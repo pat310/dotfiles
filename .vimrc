@@ -41,8 +41,6 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 " Initialize plugin system
 call plug#end()
 
@@ -51,6 +49,9 @@ syntax on "syntax highlighting
 colorscheme Tomorrow-Night "choosing the color theme from colors directory
 set colorcolumn=90 "setting a colored column line
 set number "adding line numbers
+
+"Setting ALEError group color to avoid error message E28 can not find ALEError
+highlight ALEError guibg=Red
 
 "keeping more information in memory
 set hidden
@@ -72,8 +73,8 @@ set nu rnu
 "remove white space on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-"highlight search words
-set hlsearch
+"highlight as you search words
+set incsearch
 
 "to always display the bottom status line
 set laststatus=2
@@ -105,7 +106,7 @@ nmap <leader>ne :NERDTree<cr>
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 
-
+autocmd BufRead *.ts setlocal filetype=typescript
 "Language server commands
 let g:LanguageClient_serverCommands = {
     \ 'javascript': ['javascript-typescript-stdio'],
@@ -119,4 +120,5 @@ let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.l
 
 nnoremap ,, :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
