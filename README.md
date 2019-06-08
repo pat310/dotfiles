@@ -7,6 +7,7 @@ git clone to the home directory as `.vim`:
 * In vim, run `:PlugInstall` to install plugins
 * Symlink .vimrc in git repo to ~: `ln -sf ~/.vim/.vimrc ~/.vimrc`
 * Symlink .ackrc in git repo to ~: `ln -sf ~/.vim/.ackrc ~/.ackrc`
+* Symlink gitignore in git repo to ~: `ln -sf ~/.vim/gitignore ~/.gitignore && git config --global core.excludesfile ~/.gitignore`
 * `sudo npm install -g javascript-typescript-langserver` [typescript and javascript language features](https://github.com/sourcegraph/javascript-typescript-langserver)
 
 ## Additional tips
