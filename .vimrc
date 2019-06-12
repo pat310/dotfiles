@@ -73,6 +73,9 @@ set nu rnu
 "remove white space on save
 autocmd BufWritePre * :%s/\s\+$//e
 
+"highlight search item (useful when going to next selected item)
+set hlsearch
+
 "highlight as you search words
 set incsearch
 
