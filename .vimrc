@@ -35,11 +35,8 @@ Plug 'reasonml-editor/vim-reason-plus'
 "Typescript syntax highlighting
 Plug 'https://github.com/leafgarland/typescript-vim'
 
-"Language server
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+"ALE TS linting
+Plug 'w0rp/ale'
 
 " Initialize plugin system
 call plug#end()
@@ -110,18 +107,12 @@ cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 
 autocmd BufRead *.ts setlocal filetype=typescript
-"Language server commands
-let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio'],
-    \ 'typescript': ['javascript-typescript-stdio'],
-    \ }
 
-let g:LanguageClient_loggingLevel = 'INFO'
-let g:LanguageClient_loggingFile =  expand('~/.local/share/nvim/LanguageClient.log')
-let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
+let g:ale_fixers = {
+    \ 'javascript': ['prettier'],
+    \ 'typescript': ['prettier'],
+    \}
+let g:ale_javascript_prettier_use_local_config = 1
 
-nnoremap ,, :call LanguageClient_contextMenu()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+noremap <silent> gd :ALEGoToDefinition<CR>
+noremap <silent> K :ALEHover<CR>
