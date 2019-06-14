@@ -121,5 +121,9 @@ let g:ale_fixers = {
     \}
 let g:ale_javascript_prettier_use_local_config = 1
 
-noremap <silent> gd :ALEGoToDefinition<CR>
+noremap <silent> gdd :ALEGoToDefinition<CR>
+noremap <silent> gdv :ALEGoToDefinitionInVSplit<CR>
+noremap <silent> gdx :ALEGoToDefinitionInSplit<CR>
+noremap <silent> gdt :ALEGoToDefinitionInTab<CR>
+noremap <silent> gfr :ALEFindReferences<CR>
 noremap <silent> K :ALEHover<CR>
