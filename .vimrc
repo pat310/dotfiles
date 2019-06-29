@@ -21,26 +21,17 @@ Plug 'https://github.com/scrooloose/nerdtree'
 "matching bracket completion
 Plug 'https://github.com/jiangmiao/auto-pairs'
 
-"haskell highlighting
-Plug 'https://github.com/neovimhaskell/haskell-vim'
-
 "tab completion
 Plug 'https://github.com/ervandew/supertab'
-
-"jsx syntax highlighting
-Plug 'https://github.com/mxw/vim-jsx'
 
 "Fuzzy search through files
 Plug 'https://github.com/mileszs/ack.vim'
 
-"Purescript syntax highlighting
-Plug 'https://github.com/purescript-contrib/purescript-vim'
+"Various language syntax highlighting
+Plug 'sheerun/vim-polyglot'
 
-"ReasonML syntax highlighting
-Plug 'reasonml-editor/vim-reason-plus'
-
-"Typescript syntax highlighting
-Plug 'https://github.com/leafgarland/typescript-vim'
+"Color scheme
+Plug 'chriskempson/base16-vim'
 
 "ALE TS linting
 Plug 'w0rp/ale'
@@ -48,14 +39,18 @@ Plug 'w0rp/ale'
 " Initialize plugin system
 call plug#end()
 
+" access colors present in 256 colorspace (this must be placed above color scheme selection)
+let base16colorspace=256
+
 filetype on "filetype detection
 syntax on "syntax highlighting
-colorscheme Tomorrow-Night "choosing the color theme from colors directory
+colorscheme base16-default-dark "color theme
 set colorcolumn=90 "setting a colored column line
 set number "adding line numbers
 
-"Setting ALEError group color to avoid error message E28 can not find ALEError
-highlight ALEError guibg=Red
+"set airline bar theme
+let g:airline_theme='base16'
+
 
 "keeping more information in memory
 set hidden
@@ -89,9 +84,6 @@ set laststatus=2
 "highlight matching parenthesis
 set showmatch
 
-"set airline bar theme
-let g:airline_theme='tomorrow'
-
 "allow fuzzy search through files
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 "ctrlp ignore node_modules
@@ -121,9 +113,19 @@ let g:ale_fixers = {
     \}
 let g:ale_javascript_prettier_use_local_config = 1
 
+highlight ALEError ctermbg=none cterm=bold,underline ctermfg=LightBlue
+highlight ALEWarning ctermbg=none cterm=bold,underline ctermfg=LightMagenta
+
 noremap <silent> gdd :ALEGoToDefinition<CR>
 noremap <silent> gdv :ALEGoToDefinitionInVSplit<CR>
 noremap <silent> gdx :ALEGoToDefinitionInSplit<CR>
 noremap <silent> gdt :ALEGoToDefinitionInTab<CR>
 noremap <silent> gfr :ALEFindReferences<CR>
 noremap <silent> K :ALEHover<CR>
+
+
+"Set colorful config flag (for vim-javascript only)
+let g:vim_jsx_pretty_colorful_config = 1
+
+"Highlight the close tag separate from the open tag in JSX
+let g:vim_jsx_pretty_highlight_close_tag = 1
