@@ -92,6 +92,9 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|sv
 "opening nerd tree
 nmap <leader>ne :NERDTree<cr>
 
+"open nerd tree explorer to position of open file
+map <leader>r :NERDTreeFind<cr>
+
 "vim haskell config
 " let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
 " let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
